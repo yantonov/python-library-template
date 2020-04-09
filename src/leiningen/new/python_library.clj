@@ -18,6 +18,7 @@
              ["bin/prepare.sh" (render "bin/prepare.sh") :executable true]
              ["bin/test.sh" (render "bin/test.sh") :executable true]
              ["bin/build-dist.sh" (render "bin/build-dist.sh") :executable true]
+             ["bin/install-local.sh" (render "bin/install-local.sh") :executable true]
 
              ["setup.py" (render "setup.py" data )]
              ["{{sanitized}}/__init__.py" (render "library/__init__.py")]
