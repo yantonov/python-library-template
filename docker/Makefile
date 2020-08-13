@@ -21,7 +21,7 @@ run:
 			-v "$(SRC):$(CONTAINER_DIR)" \
 			--rm \
 			"$(IMAGE)" \
-			lein new python-library "$(PROJECT_DIR)"
+			lein new python-library "$(PROJECT_DIR)" --snapshot
 
 ssh:
 	docker run --rm -t -i -v "$(SRC):$(CONTAINER_DIR)" "$(IMAGE)" /bin/bash
