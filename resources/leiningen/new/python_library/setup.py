@@ -1,11 +1,20 @@
+import os
+import re
 import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+here = os.path.abspath(os.path.dirname(__file__))
+
+def get_version():
+    version_file = os.path.join(here, "{{name}}", "__init__.py")
+    with open(version_file, encoding="utf-8") as f:
+        return re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]', f.read(), re.M).group(1)
+
 setuptools.setup(
     name="{{name}}",
-    version="0.0.1",
+    version=get_version(),
     author="Example Author",
     author_email="author@example.com",
     description="A small example package",
